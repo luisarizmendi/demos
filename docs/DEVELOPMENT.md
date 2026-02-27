@@ -109,6 +109,10 @@ For more details on training models, inference parameters, and usage, see [so_ar
 
 Additional resources for using Pixi can be found at this [blog](https://jafarabdi.github.io/blog/2025/ros2-pixi-dev/).
 
+### Scene Configuration
+
+MuJoCo loads poses from `pai_bringup/config/world/poses.yaml` at launch time. Edit `poses.yaml` to change table, tray, or cube positions, then rebuild and relaunch (or relaunch only with symlink-install). See [config/world/README.md](../pai_bringup/config/world/README.md) for details.
+
 ## FAQ
 
 ### Warning: "Could not find activation scripts: install/setup.bash"

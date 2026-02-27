@@ -2,11 +2,20 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="so_arm101">
   <xacro:arg name="prefix" default="" />
   <xacro:arg name="color" default="0.2 0.7 0.85 1.0" />
+  <xacro:arg name="mujoco_model" default=""/>
+  <xacro:arg name="arm_base_x" default="0.38"/>
+  <xacro:arg name="arm_base_y" default="0.0"/>
+  <xacro:arg name="arm_base_z" default="0.4"/>
+  <xacro:arg name="arm_base_roll" default="0.0"/>
+  <xacro:arg name="arm_base_pitch" default="0.0"/>
+  <xacro:arg name="arm_base_yaw" default="3.14159"/>
 
-  <!-- The SO-ARM101 robot --> 
   <link name="world" />
+
   <xacro:include filename="$(find so_arm101_description)/urdf/so_arm101_macro.xacro" />
-  <xacro:so_arm101 prefix="$(arg prefix)" color="$(arg color)" />
+  <xacro:so_arm101 prefix="$(arg prefix)" color="$(arg color)" parent="world"
+    x="$(arg arm_base_x)" y="$(arg arm_base_y)" z="$(arg arm_base_z)"
+    roll="$(arg arm_base_roll)" pitch="$(arg arm_base_pitch)" yaw="$(arg arm_base_yaw)" />
 
   <!-- Overhead camera link -->
   <link name="camera_color_mujoco_frame"/>
@@ -20,7 +29,7 @@
   <ros2_control name="MujocoSystem" type="system">
     <hardware>
       <plugin>mujoco_ros2_control/MujocoSystemInterface</plugin>
-      <param name="mujoco_model">$(find pai_bringup)/mjcf/scene.xml</param>
+      <param name="mujoco_model">$(arg mujoco_model)</param>
       <param name="sim_speed_factor">1.0</param>
       <param name="camera_publish_rate">10.0</param>
     </hardware>

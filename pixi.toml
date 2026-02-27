@@ -142,7 +142,6 @@ ros-kilted-rmw-zenoh-cpp = "*"
 [pypi-dependencies]
 huggingface-hub = "*"
 lerobot = { version = "==0.4.3", extras = ["feetech"] }
-
 [activation]
 scripts = ["install/setup.bash"]
 
