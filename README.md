@@ -94,7 +94,22 @@ source ~/ws_pai/install/setup.bash
 ros2 launch pai_bringup so_arm_gz_bringup.launch.py
 ```
 
-With Pixi: `pixi run so-arm-gz`
+**With Pixi:**
+
+> [!IMPORTANT]
+> This project uses `rmw_zenoh` as the ROS 2 middleware. The Zenoh router must
+> be running before launching any demo. Start it in a dedicated terminal and
+> leave it running for the duration of your session:
+>
+> ```bash
+> pixi run start_zenoh
+> ```
+>
+> Then open a second terminal for the commands below.
+>
+> ```bash
+> pixi run so-arm-gz
+> ```
 
 ### MuJoCo
 
@@ -104,7 +119,22 @@ With Pixi: `pixi run so-arm-gz`
 ros2 launch pai_bringup so_arm_mujoco_bringup.launch.py
 ```
 
-With Pixi: `pixi run so-arm-mujoco`
+**With Pixi:**
+
+> [!IMPORTANT]
+> This project uses `rmw_zenoh` as the ROS 2 middleware. The Zenoh router must
+> be running before launching any demo. Start it in a dedicated terminal and
+> leave it running for the duration of your session:
+>
+> ```bash
+> pixi run start_zenoh
+> ```
+>
+> Then open a second terminal for the commands below.
+>
+> ```bash
+> pixi run so-arm-mujoco
+> ```
 
 ### Real hardware
 
