@@ -22,6 +22,13 @@ pixi install
 pixi run build
 ```
 
+Source the workspace before running demos:
+
+```bash
+source install/setup.bash
+```
+
+
 To install ML dependencies (PyTorch, LeRobot — automatically detects your GPU):
 
 ```bash
