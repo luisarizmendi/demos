@@ -28,7 +28,6 @@ Source the workspace before running demos:
 source install/setup.bash
 ```
 
-
 To install ML dependencies (PyTorch, LeRobot — automatically detects your GPU):
 
 ```bash
